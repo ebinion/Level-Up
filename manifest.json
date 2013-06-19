@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "Level Up",
+  "description": "This extension helps you track your goals so that you can 'level up' in your business and personal life.",
+  "version": "0.1",
+  "permissions": [
+    "storage"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
+}
