@@ -4,6 +4,7 @@
   "name": "Level Up",
   "description": "This extension helps you track your goals so that you can 'level up' in your business and personal life.",
   "version": "0.1",
+  "offline_enabled": true,
   "permissions": [
     "storage"
   ],

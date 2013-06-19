@@ -3,9 +3,29 @@
   <head>
     <meta charset="UTF-8">
     <title>Level Up</title>
+    <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1>Just a test</h1>
-    <p>testing content</p>
+    <h1>Level Up</h1>
+    <p>Quick &amp; dirty version to be improved upon later.</p>
+    <form id="goal-form" action="http://ezekielbinion.com">
+      <ul>
+        <li>
+          <label for="goal-statement">Goal</label>
+          <input type="text" name="goal-statement" id="goal-statement" placeholder="What would you like to accomplish?" />
+        </li>
+        <li>
+          <label for="goal-date">When would you like to accomplish this?</label>
+          <input type="date" name="goal-date" id="goal-date" placeholder="MM/DD/YYYY" />
+        </li>
+        <li>
+          <button id="goal-submit">Add Goal</button>
+        </li>
+      </ul>
+    </form>
+
+    <ul id="goals-current">
+
+    </ul>
   </body>
 </html>
