@@ -1,6 +1,5 @@
 // So class, do you know why this doesn't work? Local Storage doesn't searialize data. You only have key/value pairs.
 
-
 var formHandler = function(){
   document.forms["goal-form"].onsubmit = function(){
     var date = document.getElementById("goal-date").value;
@@ -33,3 +32,20 @@ window.onload = (function(){
   formHandler();
   retrieveData();
 });
+
+
+/* Figured out how to store data but don't want to change it yet. Need to finish a different project. New data format idea:
+
+{
+  "goals": [
+    {
+      "goal": "Something I want to accomplish",
+      "date": "yyyy/mm/dd (easier for sorting)"
+    }
+  ],
+  "settings": {
+    "setting key": "setting value"
+  }
+}
+
+*/
