@@ -1,46 +1,13 @@
 // So class, do you know why this doesn't work? Local Storage doesn't searialize data. You only have key/value pairs.
 
-var formHandler = function(){
-  document.forms["goal-form"].onsubmit = function(){
-    var date = document.getElementById("goal-date").value;
-    var goal = document.getElementById("goal-statement").value;
-
-    saveForm(date, goal);
-    return false;
-  };
-}
-
-var saveForm = function(date, goal){
-  // Save it using the Chrome extension storage API.
-  chrome.storage.sync.set({"date": date, "goal": goal}, function(){
-    window.console.log("Saved successfully!");
-  });
-
-  return false;
-};
-
-var retrieveData = function(){
-  chrome.storage.sync.get(null, function(items){
-    for(i=0; i>items.length; i++){
-      window.console.log(items[i]);
-    }
-  });
-}
-
-
-window.onload = (function(){
-  formHandler();
-  retrieveData();
-});
-
-
 /* Figured out how to store data but don't want to change it yet. Need to finish a different project. New data format idea:
 
 {
   "goals": [
     {
       "goal": "Something I want to accomplish",
-      "date": "yyyy/mm/dd (easier for sorting)"
+      "date": "yyyy/mm/dd (easier for sorting)",
+      "priority": "Order I want to accomplish it in"
     }
   ],
   "settings": {
@@ -49,3 +16,56 @@ window.onload = (function(){
 }
 
 */
+
+
+/**
+ * Creates a new Model instance.
+ *
+ * @constructor
+ * @param {object} storage A reference to the client side storage class
+ */
+function Model(dbName, db){
+  this.dbName = dbName || false;
+  this.db = db || window.localstorage;
+}
+
+
+/**
+* Creates new objects in the model
+*
+*/
+Model.prototype.create = function(){
+
+}
+
+/**
+* Returns all elements in the model
+*
+*/
+Model.prototype.all = function(){
+
+}
+
+/**
+* Finds specific objects in the model
+*
+*/
+Model.prototype.find = function(){
+
+}
+
+/**
+* Updates objects in the model
+*
+*/
+Model.prototype.update = function(){
+
+}
+
+/**
+* Deletes objects in the model
+*
+*/
+Model.prototype.delete = function(){
+
+}
