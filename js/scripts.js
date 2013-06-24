@@ -19,23 +19,30 @@
 
 
 /**
- * Creates a new Model instance.
+ * Creates a new Model instance and a new collection object.
  *
  * @constructor
  * @param {object} storage A reference to the client side storage class
  */
-function Model(dbName, db){
-  this.dbName = dbName || false;
-  this.db = db || window.localstorage;
+function Model(dbName, settings, callback){
+  this.dbName = dbName || goals;
+
+  callback = callback || function () {};
+
+  // Settings
+  this.dbType = settings["dbType"] || window.localstorage;
+
+  callback();
 }
 
 
 /**
-* Creates new objects in the model
-*
-*/
-Model.prototype.create = function(){
-
+ * Creates new objects in the model
+ * 
+ * @param {function} [callback] The function to call after the object has been created
+ */
+Model.prototype.create = function(object, callback){
+  callback = callback || function () {};
 }
 
 /**
