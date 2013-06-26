@@ -25,15 +25,49 @@
  * @param {object} storage A reference to the client side storage class
  */
 function Model(dbName, settings, callback){
-  this.dbName = dbName || goals;
+  settings = settings || {};
 
-  callback = callback || function () {};
+  this.dbName = dbName || "goals";
+
+  callback = callback || function(){};
 
   // Settings
-  this.dbType = settings["dbType"] || window.localstorage;
+  this.dbType = settings["dbType"] || window.localStorage;
 
-  callback();
+  // Initialize collection
+  if( !this.dbType.getItem(this.dbName) ){
+    this.dbType.setItem(this.dbName, []);
+  }
+
+  // window.console.log( JSON.parse(this.dbType.getItem(this.dbName)) );
+
+  return callback();
 }
+
+/**
+* Returns all elements in the model, is used by most functions in the class
+*
+*/
+Model.prototype.all = function(){
+  data = this.dbType.getItem(this.dbName);
+
+  if(!data){
+    return [];
+  }else{
+    return JSON.parse(data);
+  }
+};
+
+/**
+* Saves the model
+*
+*/
+Model.prototype.save = function(currentModel){
+  if(!currentModel){
+    return false;
+  }
+  this.dbType.setItem(this.dbName, JSON.stringify(currentModel));
+};
 
 
 /**
@@ -42,32 +76,55 @@ function Model(dbName, settings, callback){
  * @param {function} [callback] The function to call after the object has been created
  */
 Model.prototype.create = function(object, callback){
+  currentModel = this.all();
+  currentModel.push(object);
+
+  this.save(currentModel);
+
   callback = callback || function () {};
-}
 
-/**
-* Returns all elements in the model
-*
-*/
-Model.prototype.all = function(){
+  return callback();
+};
 
-}
 
 /**
 * Finds specific objects in the model
 *
 */
-Model.prototype.find = function(){
+Model.prototype.find = function(id){
+  if(id === null || id === false){
+    return false;
+  }
+  currentModel = this.all();
 
-}
+  if(id > currentModel.length - 1){
+    return false;
+  }else{
+    return currentModel[id];
+  }
+
+};
 
 /**
 * Updates objects in the model
 *
 */
-Model.prototype.update = function(){
+Model.prototype.update = function(id, object, callback){
+  if(id === null || id === false || !object){
+    return false;
+  }
 
-}
+  currentModel = this.all();
+  if(!currentModel[id]){
+    return false;
+  }
+
+  currentModel[id] = object;
+  this.save(currentModel);
+
+  callback = callback || function(){};
+  return callback();
+};
 
 /**
 * Deletes objects in the model
@@ -75,4 +132,7 @@ Model.prototype.update = function(){
 */
 Model.prototype.delete = function(){
 
-}
+};
+
+
+var Test = new Model();
