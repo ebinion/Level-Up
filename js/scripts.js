@@ -24,15 +24,13 @@
  * @constructor
  * @param {object} storage A reference to the client side storage class
  */
-function Model(dbName, settings, callback){
-  settings = settings || {};
-
+function Model(dbName, dbType, callback){
   this.dbName = dbName || "goals";
 
   callback = callback || function(){};
 
   // Settings
-  this.dbType = settings["dbType"] || window.localStorage;
+  this.dbType = dbType || window.localStorage;
 
   // Initialize collection
   if( !this.dbType.getItem(this.dbName) ){
@@ -130,8 +128,32 @@ Model.prototype.update = function(id, object, callback){
 * Deletes objects in the model
 *
 */
-Model.prototype.delete = function(){
+Model.prototype.delete = function(id, callback){
+  if(id === null || id === false){
+    return false;
+  }
 
+  currentModel = this.all();
+  if(!currentModel[id]){
+    return false;
+  }
+
+  currentModel.splice(id, 1);
+  this.save(currentModel);
+
+  callback = callback || function(){};
+  return callback();
+};
+
+/**
+* Deletes all objects in the model
+*
+*/
+Model.prototype.deleteAll = function(callback){
+  this.dbType.setItem(this.dbName, []);
+
+  callback = callback || function(){};
+  return callback();
 };
 
 
