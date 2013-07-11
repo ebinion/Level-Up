@@ -1,0 +1,74 @@
+html, body{
+  background: #333;
+  color: #aaa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li{
+  margin: 0;
+  padding: 0;
+}
+
+// Section labels
+.sectionHeader{
+  border-top: 1px solid #444;
+  margin-top: 58px;
+}
+
+.sectionLabel{
+  background: #333;
+  border: 5px solid #444;
+  color: #888;
+  font-size: 14px;
+  font-weight: 300;
+  margin: -18px auto 0;
+  max-width: 130px;
+  padding: 4px 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+// Goals
+.goalsList{
+  margin: 10px auto;
+  max-width: 660px;
+  width: 100%;
+}
+.goal{
+  background: #333;
+  line-height: 24px;
+  font-size: 16px;
+  padding: 20px 30px;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+
+  &.current{
+    color: #ccc;
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  &:hover{
+    background: lighten(#333, 2%);
+    color: #ccc;
+  }
+
+  p{
+    margin: 0;
+  }
+}
+
+.goalActions{
+  font-size: 24px;
+  line-height: 1;
+  margin: 20px 0 0;
+  padding: 0;
+}
