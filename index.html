@@ -4,28 +4,64 @@
     <meta charset="UTF-8">
     <title>Level Up</title>
     <script src="js/scripts.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <h1>Level Up</h1>
-    <p>Quick &amp; dirty version to be improved upon later.</p>
-    <form id="goal-form" action="http://ezekielbinion.com">
-      <ul>
-        <li>
-          <label for="goal-statement">Goal</label>
-          <input type="text" name="goal-statement" id="goal-statement" placeholder="What would you like to accomplish?" />
+    <header id="siteHeader">
+      <span title="999+ goals accomplished">999+</span>
+      <a href="#newGoal" title="Create a new goal">Create a new goal</a>
+      <a href="#defaultChromeNewTab" title="Chrome's default new tab view">Chrome's default new tab view</a>
+      <a href="#settings" title="Application settings">Update application settings</a>
+    </header>
+    <section id="currentGoal" class="goalsSection">
+      <header>
+        <h1 class="sectionLabel">Current Goal</h1>
+      </header>
+      <ol class="goalsList">
+        <li class="goalWrapper">
+          <article class="goal">
+            <p>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</p>
+            <menu class="goalActions">
+              <ul class="goalActionsList">
+                <li class="goalAction"><a href="#deleteGoal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal">Mark goal accomplished</a></li>
+              </ul>
+            </menu>
+          </article>
         </li>
-        <li>
-          <label for="goal-date">When would you like to accomplish this?</label>
-          <input type="date" name="goal-date" id="goal-date" placeholder="MM/DD/YYYY" />
+      </ol>
+    </section>
+    <section id="futureGoals" class="goalsSection">
+      <header>
+        <h2 class="sectionLabel">Future Goals</h2>
+      </header>
+      <ol class="goalsList">
+        <li class="goalWrapper">
+          <article class="goal">
+            <p>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</p>
+            <menu class="goalActions">
+              <ul class="goalActionsList">
+                <li class="goalAction"><a href="#deleteGoal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal">Mark goal accomplished</a></li>
+              </ul>
+            </menu>
+          </article>
         </li>
-        <li>
-          <button id="goal-submit">Add Goal</button>
+        <li class="goalWrapper">
+          <article class="goal">
+            <p>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</p>
+            <menu class="goalActions">
+              <ul class="goalActionsList">
+                <li class="goalAction"><a href="#deleteGoal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal">Mark goal accomplished</a></li>
+              </ul>
+            </menu>
+          </article>
         </li>
-      </ul>
-    </form>
-
-    <ul id="goals-current">
-
-    </ul>
+      </ol>
+    </section>
   </body>
 </html>
