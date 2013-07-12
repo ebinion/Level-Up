@@ -2,7 +2,74 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 1, ../sass/_base.scss */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+/* line 13, ../sass/_fonts.scss */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+/* line 30, ../sass/_fonts.scss */
+[class*="icon-"] {
+  font-family: 'icomoon';
+  font-style: inherit;
+  font-weight: inherit;
+  font-variant: inherit;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+/* line 40, ../sass/_fonts.scss */
+.icon-Trash:before {
+  content: "\e0d0"; }
+
+/* line 43, ../sass/_fonts.scss */
+.icon-Accept:before {
+  content: "\2713"; }
+
+/* line 46, ../sass/_fonts.scss */
+.icon-Edit:before {
+  content: "\e000"; }
+
+/* line 49, ../sass/_fonts.scss */
+.icon-Grid:before {
+  content: "\e9a0"; }
+
+/* line 52, ../sass/_fonts.scss */
+.icon-Exit:before {
+  content: "\2421"; }
+
+/* line 55, ../sass/_fonts.scss */
+.icon-Award:before {
+  content: "\e1c0"; }
+
+/* line 58, ../sass/_fonts.scss */
+.icon-Cancel:before {
+  content: "\e001"; }
+
+/* line 61, ../sass/_fonts.scss */
+.icon-Settings:before {
+  content: "\2699"; }
+
+/* line 3, ../sass/_base.scss */
 html, body {
   background: #333;
   color: #aaa;
@@ -11,31 +78,59 @@ html, body {
   margin: 0;
   padding: 0; }
 
-/* line 10, ../sass/_base.scss */
+/* line 12, ../sass/_base.scss */
 body {
   padding-bottom: 150px; }
 
-/* line 14, ../sass/_base.scss */
+/* line 16, ../sass/_base.scss */
 ol, ul {
   list-style: none;
   padding: 0;
   margin: 0; }
 
-/* line 19, ../sass/_base.scss */
+/* line 21, ../sass/_base.scss */
 li {
   margin: 0;
   padding: 0; }
 
-/* line 24, ../sass/_base.scss */
+/* line 26, ../sass/_base.scss */
 a {
-  color: #aaa; }
+  color: #aaa;
+  text-decoration: none; }
 
-/* line 29, ../sass/_base.scss */
+/* line 31, ../sass/_base.scss */
+:focus {
+  outline: none; }
+
+/* line 36, ../sass/_base.scss */
+[class*="icon-"] {
+  display: inline-block;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 40px; }
+
+/* line 45, ../sass/_base.scss */
+[class*="icon-"]:before {
+  display: block;
+  font-size: 26px;
+  height: 26px;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-indent: 0;
+  top: 7px;
+  width: 40px; }
+
+/* line 59, ../sass/_base.scss */
 .sectionHeader {
   border-top: 1px solid #444;
   margin-top: 58px; }
 
-/* line 34, ../sass/_base.scss */
+/* line 64, ../sass/_base.scss */
 .sectionLabel {
   background: #333;
   border: 5px solid #444;
@@ -49,13 +144,13 @@ a {
   text-transform: uppercase;
   width: 100%; }
 
-/* line 49, ../sass/_base.scss */
+/* line 79, ../sass/_base.scss */
 .goalsList {
   margin: 10px auto;
   max-width: 660px;
   width: 100%; }
 
-/* line 54, ../sass/_base.scss */
+/* line 84, ../sass/_base.scss */
 .goal {
   background: #333;
   box-shadow: 2px 2px 0 #333;
@@ -64,41 +159,81 @@ a {
   margin: 5px 0;
   padding: 20px 30px;
   transition: all .2s ease-in-out; }
-  /* line 63, ../sass/_base.scss */
+  /* line 93, ../sass/_base.scss */
   .goal.current {
     color: #ccc;
     font-size: 36px;
     line-height: 42px; }
-    /* line 68, ../sass/_base.scss */
+    /* line 98, ../sass/_base.scss */
     .goal.current:hover, .goal.current.focus {
       color: #eee; }
-  /* line 73, ../sass/_base.scss */
+  /* line 103, ../sass/_base.scss */
   .goal:hover, .goal.focus {
     background: #383838;
     box-shadow: 2px 2px 0 #2e2e2e;
     color: #eee; }
-  /* line 79, ../sass/_base.scss */
+  /* line 109, ../sass/_base.scss */
   .goal p {
     margin: 0; }
 
-/* line 84, ../sass/_base.scss */
-.goalActions {
-  font-size: 24px;
-  line-height: 1;
-  margin: 20px 0 0;
-  padding: 0; }
-
-/* line 91, ../sass/_base.scss */
+/* line 113, ../sass/_base.scss */
 .goalContent {
   color: inherit;
   cursor: text;
   font-size: inherit;
   line-height: inherit; }
-  /* line 97, ../sass/_base.scss */
-  .goalContent:focus {
-    outline: none; }
 
-/* line 103, ../sass/_base.scss */
+/* line 121, ../sass/_base.scss */
+.goalActions {
+  font-size: 24px;
+  line-height: 1;
+  margin: 20px 0 0;
+  padding: 0; }
+  /* line 2, ../sass/_mixins.scss */
+  .goalActions:after, .goalActions:before {
+    content: "";
+    display: table; }
+  /* line 6, ../sass/_mixins.scss */
+  .goalActions:after {
+    clear: both; }
+
+/* line 128, ../sass/_base.scss */
+.goalActionsList {
+  clear: both;
+  float: right; }
+
+/* line 132, ../sass/_base.scss */
+.goalAction {
+  float: left; }
+  /* line 135, ../sass/_base.scss */
+  .goalAction > a {
+    color: #777;
+    transition: color .2s ease-in-out; }
+    /* line 139, ../sass/_base.scss */
+    .goalAction > a:hover, .goalAction > a:focus {
+      color: #eee; }
+
+/* line 146, ../sass/_base.scss */
+.editMenu, .goalMenu {
+  height: 0;
+  overflow: hidden; }
+
+/* line 155, ../sass/_base.scss */
+.focus .editMenu {
+  height: auto; }
+/* line 160, ../sass/_base.scss */
+.focus .goalMenu {
+  height: 0; }
+
+/* line 166, ../sass/_base.scss */
+.current.goal .goalMenu, .goal:hover .goalMenu {
+  height: auto; }
+
+/* line 171, ../sass/_base.scss */
+.goal.focus:hover .goalMenu {
+  height: 0; }
+
+/* line 176, ../sass/_base.scss */
 #siteHeader {
   bottom: 0;
   background: #333;
@@ -106,4 +241,5 @@ a {
   color: #333;
   padding: 10px 0;
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  z-index: 99; }

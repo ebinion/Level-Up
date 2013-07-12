@@ -1,3 +1,5 @@
+// Since their are not very many styles required at the moment, most styles are here. (Will split as needed.)
+
 html, body{
   background: #333;
   color: #aaa;
@@ -23,6 +25,34 @@ li{
 
 a{
   color: #aaa;
+  text-decoration: none;
+}
+
+:focus{
+  outline: none;
+}
+
+// Icons
+[class*="icon-"]{
+  display: inline-block;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 40px;
+}
+[class*="icon-"]:before{
+  display: block;
+  font-size: 26px;
+  height: 26px;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-indent: 0;
+  top: 7px;
+  width: 40px;
 }
 
 // Section labels
@@ -80,23 +110,66 @@ a{
     margin: 0;
   }
 }
-
-.goalActions{
-  font-size: 24px;
-  line-height: 1;
-  margin: 20px 0 0;
-  padding: 0;
-}
-
 .goalContent{
   color: inherit;
   cursor: text;
   font-size: inherit;
   line-height: inherit;
+}
 
-  &:focus{
-    outline: none;
+// Goals menu
+.goalActions{
+  font-size: 24px;
+  line-height: 1;
+  margin: 20px 0 0;
+  padding: 0;
+  @include self-clear;
+}
+.goalActionsList{
+  clear: both;
+  float: right;
+}
+.goalAction{
+  float: left;
+
+  > a{
+    color: #777;
+    transition: color .2s ease-in-out;
+
+    &:hover, &:focus{
+      color: #eee;
+    }
   }
+}
+
+// Goal & Edit menus hidden
+.editMenu, .goalMenu{
+  height: 0;
+  overflow: hidden;
+}
+
+
+// Display of menus
+.focus{
+// Reveal edit menu when editing goal
+  & .editMenu{
+    height: auto;
+  }
+
+// Hide actions menu when editing goal 
+  & .goalMenu{
+    height: 0;
+  }
+}
+
+// Goal menu shown if it's the current goal or a future goal is being hovered on
+.current.goal .goalMenu, .goal:hover .goalMenu{
+  height: auto;
+}
+
+// Goal menu override for hover
+.goal.focus:hover .goalMenu{
+  height: 0;
 }
 
 // Site header
@@ -109,4 +182,5 @@ a{
   padding: 10px 0;
   position: fixed;
   width: 100%;
+  z-index: 99;
 }
