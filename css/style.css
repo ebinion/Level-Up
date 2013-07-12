@@ -12,22 +12,30 @@ html, body {
   padding: 0; }
 
 /* line 10, ../sass/_base.scss */
+body {
+  padding-bottom: 150px; }
+
+/* line 14, ../sass/_base.scss */
 ol, ul {
   list-style: none;
   padding: 0;
   margin: 0; }
 
-/* line 15, ../sass/_base.scss */
+/* line 19, ../sass/_base.scss */
 li {
   margin: 0;
   padding: 0; }
 
-/* line 21, ../sass/_base.scss */
+/* line 24, ../sass/_base.scss */
+a {
+  color: #aaa; }
+
+/* line 29, ../sass/_base.scss */
 .sectionHeader {
   border-top: 1px solid #444;
   margin-top: 58px; }
 
-/* line 26, ../sass/_base.scss */
+/* line 34, ../sass/_base.scss */
 .sectionLabel {
   background: #333;
   border: 5px solid #444;
@@ -41,35 +49,61 @@ li {
   text-transform: uppercase;
   width: 100%; }
 
-/* line 41, ../sass/_base.scss */
+/* line 49, ../sass/_base.scss */
 .goalsList {
   margin: 10px auto;
   max-width: 660px;
   width: 100%; }
 
-/* line 46, ../sass/_base.scss */
+/* line 54, ../sass/_base.scss */
 .goal {
   background: #333;
+  box-shadow: 2px 2px 0 #333;
   line-height: 24px;
   font-size: 16px;
+  margin: 5px 0;
   padding: 20px 30px;
-  transition: background-color .2s ease-in-out, color .2s ease-in-out; }
-  /* line 53, ../sass/_base.scss */
+  transition: all .2s ease-in-out; }
+  /* line 63, ../sass/_base.scss */
   .goal.current {
     color: #ccc;
     font-size: 36px;
     line-height: 42px; }
-  /* line 59, ../sass/_base.scss */
-  .goal:hover {
+    /* line 68, ../sass/_base.scss */
+    .goal.current:hover, .goal.current.focus {
+      color: #eee; }
+  /* line 73, ../sass/_base.scss */
+  .goal:hover, .goal.focus {
     background: #383838;
-    color: #ccc; }
-  /* line 64, ../sass/_base.scss */
+    box-shadow: 2px 2px 0 #2e2e2e;
+    color: #eee; }
+  /* line 79, ../sass/_base.scss */
   .goal p {
     margin: 0; }
 
-/* line 69, ../sass/_base.scss */
+/* line 84, ../sass/_base.scss */
 .goalActions {
   font-size: 24px;
   line-height: 1;
   margin: 20px 0 0;
   padding: 0; }
+
+/* line 91, ../sass/_base.scss */
+.goalContent {
+  color: inherit;
+  cursor: text;
+  font-size: inherit;
+  line-height: inherit; }
+  /* line 97, ../sass/_base.scss */
+  .goalContent:focus {
+    outline: none; }
+
+/* line 103, ../sass/_base.scss */
+#siteHeader {
+  bottom: 0;
+  background: #333;
+  border-top: 1px solid #444;
+  color: #333;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%; }

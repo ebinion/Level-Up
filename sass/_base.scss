@@ -7,6 +7,10 @@ html, body{
   padding: 0;
 }
 
+body{
+  padding-bottom: 150px;
+}
+
 ol, ul{
   list-style: none;
   padding: 0;
@@ -15,6 +19,10 @@ ol, ul{
 li{
   margin: 0;
   padding: 0;
+}
+
+a{
+  color: #aaa;
 }
 
 // Section labels
@@ -45,20 +53,27 @@ li{
 }
 .goal{
   background: #333;
+  box-shadow: 2px 2px 0 #333;
   line-height: 24px;
   font-size: 16px;
+  margin: 5px 0;
   padding: 20px 30px;
-  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+  transition: all .2s ease-in-out;
 
   &.current{
     color: #ccc;
     font-size: 36px;
     line-height: 42px;
+
+    &:hover, &.focus{
+      color: #eee;
+    }
   }
 
-  &:hover{
+  &:hover, &.focus{
     background: lighten(#333, 2%);
-    color: #ccc;
+    box-shadow: 2px 2px 0 darken(#333, 2%);
+    color: #eee;
   }
 
   p{
@@ -71,4 +86,27 @@ li{
   line-height: 1;
   margin: 20px 0 0;
   padding: 0;
+}
+
+.goalContent{
+  color: inherit;
+  cursor: text;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+// Site header
+#siteHeader{
+  bottom: 0;
+  background: #333;
+  border-top: 1px solid #444;
+  // box-shadow: 0px 0 20px rgba(0,0,0,.1);
+  color: #333;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
 }
