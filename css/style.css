@@ -240,19 +240,37 @@ a {
 /* line 174, ../sass/_base.scss */
 .editMenu, .goalMenu {
   height: 0;
+  opacity: 0;
+  position: relative;
+  top: -20px;
+  transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out;
   overflow: hidden; }
 
 /* line 183, ../sass/_base.scss */
 .focus .editMenu {
-  height: auto; }
+  height: 40px;
+  opacity: 1;
+  top: 0;
+  transform: all .2s ease-in-out; }
 /* line 188, ../sass/_base.scss */
 .focus .goalMenu {
-  height: 0; }
+  height: 0;
+  opacity: 0;
+  position: relative;
+  top: -20px;
+  transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out; }
 
 /* line 194, ../sass/_base.scss */
 .current.goal .goalMenu, .goal:hover .goalMenu {
-  height: auto; }
+  height: 40px;
+  opacity: 1;
+  top: 0;
+  transform: all .2s ease-in-out; }
 
 /* line 199, ../sass/_base.scss */
 .goal.focus:hover .goalMenu {
-  height: 0; }
+  height: 0;
+  opacity: 0;
+  position: relative;
+  top: -20px;
+  transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out; }

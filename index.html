@@ -48,8 +48,24 @@
         </header>
         <ol class="goalsList">
           <li class="goalWrapper">
+            <li class="goalWrapper">
+            <article class="goal">
+              <div class="goalContent" contenteditable>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</div>
+              <menu class="goalActions">
+                <ul class="goalActionsList goalMenu">
+                  <li class="goalAction"><a href="#deleteGoal" class="icon-Trash" title="Remove goal">Delete Goal</a></li>
+                  <li class="goalAction"><a href="#editGoal" class="icon-Edit" title="Edit goal">Edit Goal</a></li>
+                  <li class="goalAction"><a href="#accomplishGoal" class="icon-Award" title="Mark goal accomplished">Mark goal accomplished</a></li>
+                </ul>
+                <ul class="goalActionsList editMenu">
+                  <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
+                  <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+                </ul>
+              </menu>
+            </article>
+          </li>
             <!-- This goal is in a focus state for design purposes -->
-            <article class="goal focus">
+            <article class="goal">
               <div class="goalContent" contenteditable>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</div>
               <menu class="goalActions">
                 <ul class="goalActionsList goalMenu">

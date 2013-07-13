@@ -172,7 +172,7 @@ a{
 
 // Goal & Edit menus hidden
 .editMenu, .goalMenu{
-  height: 0;
+  @include menu-hidden;
   overflow: hidden;
 }
 
@@ -181,22 +181,22 @@ a{
 .focus{
 // Reveal edit menu when editing goal
   & .editMenu{
-    height: auto;
+    @include menu-revealed;
   }
 
 // Hide actions menu when editing goal 
   & .goalMenu{
-    height: 0;
+    @include menu-hidden;
   }
 }
 
 // Goal menu shown if it's the current goal or a future goal is being hovered on
 .current.goal .goalMenu, .goal:hover .goalMenu{
-  height: auto;
+  @include menu-revealed;
 }
 
 // Goal menu override for hover
 .goal.focus:hover .goalMenu{
-  height: 0;
+  @include menu-hidden;
 }
 

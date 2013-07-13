@@ -7,3 +7,18 @@
     clear: both;
   }
 }
+
+// Goal menus
+@mixin menu-hidden(){
+  height: 0;
+  opacity: 0;
+  position: relative;
+  top: -20px;
+  transition: height .2s ease-in-out, opacity .3s ease-in-out, top .4s ease-in-out;
+}
+@mixin menu-revealed{
+  height: $sizeGoalMenuHeight;
+  opacity: 1;
+  top: 0;
+  transform: all .2s ease-in-out;
+}
