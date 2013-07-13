@@ -148,5 +148,6 @@
   };
 
   // Export to window
-  window.Model = Model;
+  window.app.Model = Model;  
+
 })(window);
