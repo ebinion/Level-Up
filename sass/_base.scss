@@ -284,6 +284,10 @@ a{
   top: 0;
   width: 100%;
   z-index: 999;
+
+  &.hidden{
+    display: none;
+  }
 }
 .goalFormWrapper{
   margin: 0 auto;
