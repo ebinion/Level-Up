@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Level Up</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <header id="siteHeader">
+      <nav id="applicationNav" class="applicationNav">
+        <ul class="horizontalNav">
+          <li>
+            <span class="goalsAccomplished" title="999+ goals accomplished">
+              <span class="icon-Award"></span>
+              999+
+            </span>
+          </li>
+          <li><a href="#newGoal" class="addGoal" title="Create a new goal"><span class="icon-Plus"></span>Create a new goal</a></li>
+        </ul>
+        <ul class="horizontalNav right">
+          <li><a href="#defaultChromeNewTab" title="Chrome's default new tab view" class="icon-Grid" title="Chrome's default new tab view">Chrome's default new tab view</a></li>
+          <li><a href="#settings" title="Application settings" class="icon-Settings">Update application settings</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="currentGoal" class="goalsSection">
+      <header class="sectionHeader">
+        <h1 class="sectionLabel">Current Goal</h1>
+      </header>
+      <ol class="goalsList">
+        <li class="goalWrapper">
+          <article class="current goal">
+            <div class="goalContent" contenteditable>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</div>
+            <menu class="goalActions">
+              <ul class="goalActionsList goalMenu">
+                <li class="goalAction"><a href="#deleteGoal" class="icon-Trash" title="Remove goal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal" class="icon-Edit" title="Edit goal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal" class="icon-Award" title="Mark goal accomplished">Mark goal accomplished</a></li>
+              </ul>
+              <ul class="goalActionsList editMenu">
+                <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
+                <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+              </ul>
+            </menu>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <section id="futureGoals" class="goalsSection">
+      <header class="sectionHeader">
+        <h2 class="sectionLabel">Future Goals</h2>
+      </header>
+      <ol class="goalsList">
+        <li class="goalWrapper">
+          <li class="goalWrapper">
+          <article class="goal">
+            <div class="goalContent" contenteditable>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</div>
+            <menu class="goalActions">
+              <ul class="goalActionsList goalMenu">
+                <li class="goalAction"><a href="#deleteGoal" class="icon-Trash" title="Remove goal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal" class="icon-Edit" title="Edit goal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal" class="icon-Award" title="Mark goal accomplished">Mark goal accomplished</a></li>
+              </ul>
+              <ul class="goalActionsList editMenu">
+                <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
+                <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+              </ul>
+            </menu>
+          </article>
+        </li>
+          <!-- This goal is in a focus state for design purposes -->
+          <article class="goal">
+            <div class="goalContent" contenteditable>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</div>
+            <menu class="goalActions">
+              <ul class="goalActionsList goalMenu">
+                <li class="goalAction"><a href="#deleteGoal" class="icon-Trash" title="Remove goal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal" class="icon-Edit" title="Edit goal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal" class="icon-Award" title="Mark goal accomplished">Mark goal accomplished</a></li>
+              </ul>
+              <ul class="goalActionsList editMenu">
+                <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
+                <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+              </ul>
+            </menu>
+          </article>
+        </li>
+        <li class="goalWrapper">
+          <article class="goal">
+            <div class="goalContent" contenteditable>Here’s this sort of long goal, I’d like to accomplish this someday, probably tomorrow. I don’t think I can accomplish it today.</div>
+            <menu class="goalActions">
+              <ul class="goalActionsList goalMenu">
+                <li class="goalAction"><a href="#deleteGoal" class="icon-Trash" title="Remove goal">Delete Goal</a></li>
+                <li class="goalAction"><a href="#editGoal" class="icon-Edit" title="Edit goal">Edit Goal</a></li>
+                <li class="goalAction"><a href="#accomplishGoal" class="icon-Award" title="Mark goal accomplished">Mark goal accomplished</a></li>
+              </ul>
+              <ul class="goalActionsList editMenu">
+                <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
+                <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+              </ul>
+            </menu>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <div class="modalWrap hidden">
+      <div class="goalFormWrapper">
+        <div class="goal form" contenteditable>
+          <div class="large goalContent">What would you like to accomplish?</div>
+          <menu class="goalActions">
+            <ul class="goalActionsList">
+              <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
+              <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+            </ul>
+          </menu>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
