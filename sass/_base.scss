@@ -9,6 +9,13 @@ html, body{
   padding: 0;
 }
 
+textarea, button{
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
 body{
   padding-bottom: 120px;
 }
@@ -169,6 +176,11 @@ a{
     }
   }
 
+  &.form{
+    background: lighten($colorBackground, 4%);
+    color: $colorTextHighlight;
+  }
+
   &:hover, &.focus{
     background: lighten($colorBackground, 4%);
     box-shadow: 2px 2px 0 darken($colorBackground, 2%);
@@ -183,12 +195,14 @@ a{
   border: 1px solid transparent;
   color: inherit;
   cursor: text;
+  display:block;
   font-size: inherit;
   left: -11px;
   line-height: inherit;
   padding: 10px 10px;
   position: relative;
   transition: border-color .2s ease-in-out;
+  -webkit-appearance: none;
   width: 100%;
 
   &:hover{
@@ -200,6 +214,10 @@ a{
     color: $colorTextHighlight;
   }
   
+  &.large{
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 // Goal action menus
@@ -256,3 +274,36 @@ a{
   @include menu-hidden;
 }
 
+
+// New Goal form
+.modalWrap{
+  background: rgba(0,0,0,.7);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.goalFormWrapper{
+  margin: 0 auto;
+  max-width: 780px;
+  width: 100%;
+}
+.goal.form{
+  box-shadow: none;
+  margin-top:0;
+  padding: 40px 60px 20px 60px;
+
+  .goalContent{
+    border-color:lighten($colorBackground, 10%);
+
+    &:hover{
+      border-color:lighten($colorBackground, 18%);
+    }
+
+    &:focus, &:hover:focus{
+      border-color:lighten($colorBackground, 30%);
+    }
+  }
+}
