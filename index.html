@@ -8,12 +8,19 @@
   <body>
     <div class="contentWrapper">
       <header id="siteHeader">
-        <span title="999+ goals accomplished">999+</span>
-        <nav>
-          <ul>
-            <li><a href="#newGoal" title="Create a new goal">Create a new goal</a></li>
-            <li><a href="#defaultChromeNewTab" title="Chrome's default new tab view">Chrome's default new tab view</a></li>
-            <li><a href="#settings" title="Application settings">Update application settings</a></li>
+        <nav id="applicationNav" class="applicationNav">
+          <ul class="horizontalNav">
+            <li>
+              <span class="goalsAccomplished" title="999+ goals accomplished">
+                <span class="icon-Award"></span>
+                999+
+              </span>
+            </li>
+            <li><a href="#newGoal" class="addGoal" title="Create a new goal"><span class="icon-Plus"></span>Create a new goal</a></li>
+          </ul>
+          <ul class="horizontalNav right">
+            <li><a href="#defaultChromeNewTab" title="Chrome's default new tab view" class="icon-Grid" title="Chrome's default new tab view">Chrome's default new tab view</a></li>
+            <li><a href="#settings" title="Application settings" class="icon-Settings">Update application settings</a></li>
           </ul>
         </nav>
       </header>

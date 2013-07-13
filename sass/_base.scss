@@ -10,7 +10,7 @@ html, body{
 }
 
 body{
-  padding-bottom: 150px;
+  padding-bottom: 120px;
 }
 
 ol, ul{
@@ -35,13 +35,68 @@ a{
 // Site header
 #siteHeader{
   bottom: 0;
-  background: $colorBackground;
-  border-top: 1px solid lighten($colorBackground, 4%);
+  background: lighten($colorBackground, 5%);
+  border-top: 1px solid $colorBackground;
   color: $colorText;
+  height: 40px;
   padding: 10px 0;
   position: fixed;
   width: 100%;
   z-index: 99;
+}
+.addGoal{
+  display: inline-block;
+  height: 40px;
+  line-height: 36px;
+  vertical-align: top;
+}
+
+// Navigation
+.applicationNav{
+  margin: 0 auto;
+  max-width: 660px;
+  width: 100%;
+  a{
+    transition: color .2s ease-in-out;
+
+    &:hover, &:focus{
+      color: $colorTextHighlight;
+    }
+  }
+}
+.horizontalNav{
+  margin: 0;
+  padding: 0;
+
+  > li{
+    float: left;
+  }
+
+  &.right{
+    float: right;
+  }
+}
+
+// Accomplised goals count
+.goalsAccomplished{
+  display: inline-block;
+  position: relative;
+  border: 1px solid lighten($colorBackground, 15%);
+  border-left: none;
+  margin: 10px 10px 0 25px;
+  padding: 2px 8px 2px 16px;
+  position: relative;
+  top: -3px;
+
+  .icon-Award{
+    position: absolute;
+    left: -25px;
+    top: -12px;
+
+    &:before{
+      font-size: 44px;
+    }
+  }
 }
 
 // Icons
@@ -90,16 +145,16 @@ a{
 // Goals
 .goalsList{
   margin: 10px auto;
-  max-width: 660px;
+  max-width: 700px;
   width: 100%;
 }
-.goal{
+.goal{ 
   background: $colorBackground;
   box-shadow: 2px 2px 0 $colorBackground;
   line-height: 24px;
   font-size: 16px;
   margin: 5px 0;
-  padding: 20px 30px;
+  padding: 20px 30px 0;
   transition: all .2s ease-in-out;
 
   &.current{
@@ -150,7 +205,6 @@ a{
   font-size: 24px;
   line-height: 1;
   margin: 20px 0 0;
-  padding: 0;
   @include self-clear;
 }
 .goalActionsList{

@@ -69,6 +69,10 @@ you can use the generic selector below, but it's slower:
 .icon-Settings:before {
   content: "\2699"; }
 
+/* line 64, ../sass/_fonts.scss */
+.icon-Plus:before {
+  content: "\2b"; }
+
 /* line 3, ../sass/_base.scss */
 html, body {
   background: #333333;
@@ -80,7 +84,7 @@ html, body {
 
 /* line 12, ../sass/_base.scss */
 body {
-  padding-bottom: 150px; }
+  padding-bottom: 120px; }
 
 /* line 16, ../sass/_base.scss */
 ol, ul {
@@ -105,15 +109,65 @@ a {
 /* line 36, ../sass/_base.scss */
 #siteHeader {
   bottom: 0;
-  background: #333333;
-  border-top: 1px solid #3d3d3d;
+  background: #404040;
+  border-top: 1px solid #333333;
   color: #aaaaaa;
+  height: 40px;
   padding: 10px 0;
   position: fixed;
   width: 100%;
   z-index: 99; }
 
-/* line 48, ../sass/_base.scss */
+/* line 47, ../sass/_base.scss */
+.addGoal {
+  display: inline-block;
+  height: 40px;
+  line-height: 36px;
+  vertical-align: top; }
+
+/* line 55, ../sass/_base.scss */
+.applicationNav {
+  margin: 0 auto;
+  max-width: 660px;
+  width: 100%; }
+  /* line 59, ../sass/_base.scss */
+  .applicationNav a {
+    transition: color .2s ease-in-out; }
+    /* line 62, ../sass/_base.scss */
+    .applicationNav a:hover, .applicationNav a:focus {
+      color: #eeeeee; }
+
+/* line 67, ../sass/_base.scss */
+.horizontalNav {
+  margin: 0;
+  padding: 0; }
+  /* line 71, ../sass/_base.scss */
+  .horizontalNav > li {
+    float: left; }
+  /* line 75, ../sass/_base.scss */
+  .horizontalNav.right {
+    float: right; }
+
+/* line 81, ../sass/_base.scss */
+.goalsAccomplished {
+  display: inline-block;
+  position: relative;
+  border: 1px solid #595959;
+  border-left: none;
+  margin: 10px 10px 0 25px;
+  padding: 2px 8px 2px 16px;
+  position: relative;
+  top: -3px; }
+  /* line 91, ../sass/_base.scss */
+  .goalsAccomplished .icon-Award {
+    position: absolute;
+    left: -25px;
+    top: -12px; }
+    /* line 96, ../sass/_base.scss */
+    .goalsAccomplished .icon-Award:before {
+      font-size: 44px; }
+
+/* line 103, ../sass/_base.scss */
 [class*="icon-"] {
   display: inline-block;
   height: 40px;
@@ -123,7 +177,7 @@ a {
   white-space: nowrap;
   width: 40px; }
 
-/* line 57, ../sass/_base.scss */
+/* line 112, ../sass/_base.scss */
 [class*="icon-"]:before {
   display: block;
   font-size: 26px;
@@ -136,12 +190,12 @@ a {
   top: 7px;
   width: 40px; }
 
-/* line 71, ../sass/_base.scss */
+/* line 126, ../sass/_base.scss */
 .sectionHeader {
   border-top: 1px solid #3d3d3d;
   margin-top: 58px; }
 
-/* line 76, ../sass/_base.scss */
+/* line 131, ../sass/_base.scss */
 .sectionLabel {
   background: #333333;
   border: 5px solid #3d3d3d;
@@ -155,39 +209,39 @@ a {
   text-transform: uppercase;
   width: 100%; }
 
-/* line 91, ../sass/_base.scss */
+/* line 146, ../sass/_base.scss */
 .goalsList {
   margin: 10px auto;
-  max-width: 660px;
+  max-width: 700px;
   width: 100%; }
 
-/* line 96, ../sass/_base.scss */
+/* line 151, ../sass/_base.scss */
 .goal {
   background: #333333;
   box-shadow: 2px 2px 0 #333333;
   line-height: 24px;
   font-size: 16px;
   margin: 5px 0;
-  padding: 20px 30px;
+  padding: 20px 30px 0;
   transition: all .2s ease-in-out; }
-  /* line 105, ../sass/_base.scss */
+  /* line 160, ../sass/_base.scss */
   .goal.current {
     color: #d4d4d4;
     font-size: 36px;
     line-height: 42px; }
-    /* line 110, ../sass/_base.scss */
+    /* line 165, ../sass/_base.scss */
     .goal.current:hover, .goal.current.focus {
       color: #eeeeee; }
-  /* line 115, ../sass/_base.scss */
+  /* line 170, ../sass/_base.scss */
   .goal:hover, .goal.focus {
     background: #3d3d3d;
     box-shadow: 2px 2px 0 #2e2e2e;
     color: #eeeeee; }
-  /* line 121, ../sass/_base.scss */
+  /* line 176, ../sass/_base.scss */
   .goal p {
     margin: 0; }
 
-/* line 125, ../sass/_base.scss */
+/* line 180, ../sass/_base.scss */
 .goalContent {
   border: 1px solid transparent;
   color: inherit;
@@ -199,20 +253,19 @@ a {
   position: relative;
   transition: border-color .2s ease-in-out;
   width: 100%; }
-  /* line 137, ../sass/_base.scss */
+  /* line 192, ../sass/_base.scss */
   .goalContent:hover {
     border-color: #4d4d4d; }
-  /* line 141, ../sass/_base.scss */
+  /* line 196, ../sass/_base.scss */
   .focus .goalContent, .goalContent:focus, .goalContent:hover:focus {
     border-color: gray;
     color: #eeeeee; }
 
-/* line 149, ../sass/_base.scss */
+/* line 204, ../sass/_base.scss */
 .goalActions {
   font-size: 24px;
   line-height: 1;
-  margin: 20px 0 0;
-  padding: 0; }
+  margin: 20px 0 0; }
   /* line 2, ../sass/_mixins.scss */
   .goalActions:after, .goalActions:before {
     content: "";
@@ -221,23 +274,23 @@ a {
   .goalActions:after {
     clear: both; }
 
-/* line 156, ../sass/_base.scss */
+/* line 210, ../sass/_base.scss */
 .goalActionsList {
   clear: both;
   float: right; }
 
-/* line 160, ../sass/_base.scss */
+/* line 214, ../sass/_base.scss */
 .goalAction {
   float: left; }
-  /* line 163, ../sass/_base.scss */
+  /* line 217, ../sass/_base.scss */
   .goalAction > a {
     color: #666666;
     transition: color .2s ease-in-out; }
-    /* line 167, ../sass/_base.scss */
+    /* line 221, ../sass/_base.scss */
     .goalAction > a:hover, .goalAction > a:focus {
       color: #eeeeee; }
 
-/* line 174, ../sass/_base.scss */
+/* line 228, ../sass/_base.scss */
 .editMenu, .goalMenu {
   height: 0;
   opacity: 0;
@@ -246,13 +299,13 @@ a {
   transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out;
   overflow: hidden; }
 
-/* line 183, ../sass/_base.scss */
+/* line 237, ../sass/_base.scss */
 .focus .editMenu {
-  height: 40px;
+  height: 60px;
   opacity: 1;
   top: 0;
   transform: all .2s ease-in-out; }
-/* line 188, ../sass/_base.scss */
+/* line 242, ../sass/_base.scss */
 .focus .goalMenu {
   height: 0;
   opacity: 0;
@@ -260,14 +313,14 @@ a {
   top: -20px;
   transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out; }
 
-/* line 194, ../sass/_base.scss */
+/* line 248, ../sass/_base.scss */
 .current.goal .goalMenu, .goal:hover .goalMenu {
-  height: 40px;
+  height: 60px;
   opacity: 1;
   top: 0;
   transform: all .2s ease-in-out; }
 
-/* line 199, ../sass/_base.scss */
+/* line 253, ../sass/_base.scss */
 .goal.focus:hover .goalMenu {
   height: 0;
   opacity: 0;
