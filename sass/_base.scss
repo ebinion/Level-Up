@@ -1,8 +1,8 @@
 // Since their are not very many styles required at the moment, most styles are here. (Will split as needed.)
 
 html, body{
-  background: #333;
-  color: #aaa;
+  background: $colorBackground;
+  color: $colorText;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 0;
@@ -24,12 +24,24 @@ li{
 }
 
 a{
-  color: #aaa;
+  color: $colorText;
   text-decoration: none;
 }
 
 :focus{
   outline: none;
+}
+
+// Site header
+#siteHeader{
+  bottom: 0;
+  background: $colorBackground;
+  border-top: 1px solid lighten($colorBackground, 4%);
+  color: $colorText;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 }
 
 // Icons
@@ -57,14 +69,14 @@ a{
 
 // Section labels
 .sectionHeader{
-  border-top: 1px solid #444;
+  border-top: 1px solid lighten($colorBackground, 4%);
   margin-top: 58px;
 }
 
 .sectionLabel{
-  background: #333;
-  border: 5px solid #444;
-  color: #888;
+  background: $colorBackground;
+  border: 5px solid lighten($colorBackground, 4%);
+  color: lighten($colorBackground, 30%);
   font-size: 14px;
   font-weight: 300;
   margin: -18px auto 0;
@@ -82,8 +94,8 @@ a{
   width: 100%;
 }
 .goal{
-  background: #333;
-  box-shadow: 2px 2px 0 #333;
+  background: $colorBackground;
+  box-shadow: 2px 2px 0 $colorBackground;
   line-height: 24px;
   font-size: 16px;
   margin: 5px 0;
@@ -91,19 +103,19 @@ a{
   transition: all .2s ease-in-out;
 
   &.current{
-    color: #ccc;
+    color: darken($colorTextHighlight, 10%);
     font-size: 36px;
     line-height: 42px;
 
     &:hover, &.focus{
-      color: #eee;
+      color: $colorTextHighlight;
     }
   }
 
   &:hover, &.focus{
-    background: lighten(#333, 2%);
-    box-shadow: 2px 2px 0 darken(#333, 2%);
-    color: #eee;
+    background: lighten($colorBackground, 4%);
+    box-shadow: 2px 2px 0 darken($colorBackground, 2%);
+    color: $colorTextHighlight;
   }
 
   p{
@@ -111,13 +123,29 @@ a{
   }
 }
 .goalContent{
+  border: 1px solid transparent;
   color: inherit;
   cursor: text;
   font-size: inherit;
+  left: -11px;
   line-height: inherit;
+  padding: 10px 10px;
+  position: relative;
+  transition: border-color .2s ease-in-out;
+  width: 100%;
+
+  &:hover{
+    border-color:lighten($colorBackground, 10%);
+  }
+
+  .focus &, &:focus, &:hover:focus{
+    border-color:lighten($colorBackground, 30%);
+    color: $colorTextHighlight;
+  }
+  
 }
 
-// Goals menu
+// Goal action menus
 .goalActions{
   font-size: 24px;
   line-height: 1;
@@ -133,11 +161,11 @@ a{
   float: left;
 
   > a{
-    color: #777;
+    color: lighten($colorBackground, 20%);
     transition: color .2s ease-in-out;
 
     &:hover, &:focus{
-      color: #eee;
+      color: $colorTextHighlight;
     }
   }
 }
@@ -172,15 +200,3 @@ a{
   height: 0;
 }
 
-// Site header
-#siteHeader{
-  bottom: 0;
-  background: #333;
-  border-top: 1px solid #444;
-  // box-shadow: 0px 0 20px rgba(0,0,0,.1);
-  color: #333;
-  padding: 10px 0;
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-}
