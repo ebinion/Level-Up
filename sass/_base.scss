@@ -285,16 +285,26 @@ a{
   top: 0;
   width: 100%;
   z-index: 999;
-  transition: opacity 1.0s ease-in-out;
+  transition-delay: .1s;
+  transition: opacity .3s ease-in-out;
+  visibility: visible;
 
   &.hidden{
-    display: none;
     opacity: 0;
+    visibility: hidden;
+
+    .goalFormWrapper{
+      top: -200px;
+    }
   }
 }
 .goalFormWrapper{
   margin: 0 auto;
+  position: relative;
+  transition: top .3s ease-in-out;
+  top: 0;
   max-width: 780px;
+  visibility: visible;
   width: 100%;
 }
 .goal.form{
