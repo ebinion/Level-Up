@@ -5,6 +5,6 @@
   }
 
   // Pass the controller to the window
-  window.app.controller = Controller;
+  window.app.Controller = Controller;
 
 })(window);

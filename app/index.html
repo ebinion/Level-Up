@@ -15,7 +15,7 @@
               999+
             </span>
           </li>
-          <li><a href="#newGoal" class="addGoal" title="Create a new goal"><span class="icon-Plus"></span>Create a new goal</a></li>
+          <li><a href="#newGoalModal" id="newGoalButton" class="addGoal" title="Create a new goal"><span class="icon-Plus"></span>Create a new goal</a></li>
         </ul>
         <ul class="horizontalNav right">
           <li><a href="#defaultChromeNewTab" title="Chrome's default new tab view" class="icon-Grid" title="Chrome's default new tab view">Chrome's default new tab view</a></li>
@@ -105,14 +105,14 @@
       </ol>
     </section>
 
-    <div class="modalWrap hidden">
+    <div id="newGoalModal" class="modalWrap hidden">
       <div class="goalFormWrapper">
-        <div class="goal form" contenteditable>
-          <div class="large goalContent">What would you like to accomplish?</div>
+        <div class="goal form">
+          <div id="newGoalContent" class="large goalContent" contenteditable>What would you like to accomplish?</div>
           <menu class="goalActions">
             <ul class="goalActionsList">
-              <li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>
-              <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>
+              <li class="goalAction"><a href="#currentGoal" class="icon-Cancel" title="Cancel" id="modalCancel">Cancel</a></li>
+              <li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes" id="modalSave">Save Changes</a></li>
             </ul>
           </menu>
         </div>
