@@ -270,7 +270,7 @@ a{
 }
 
 // Goal menu override for hover
-.goal.focus:hover .goalMenu{
+.goal.focus:hover .goalMenu, .current.goal.focus .goalMenu{
   @include menu-hidden;
 }
 

@@ -1,4 +1,4 @@
-// This file is primarily for listener style code (e.g. open a modal)
+// This file is primarily for listener style code (e.g. $obj.bind ...)
 (function(window){
 
   function Goal() {
@@ -19,5 +19,14 @@
     goal.view.closeModal(e);
   });
 
+  // Focus on .goalContent (except the one in the modal) adds focus class
+  $(".goalContent").not("#newGoalContent").bind('focus', function(e){
+    goal.view.existingGoalAddFocus(this);
+  });
+
+  // Blur out of .goalContent (except the one in the modal) removes focus class
+  $(".goalContent").not("#newGoalContent").bind('blur', function(e){
+    goal.view.existingGoalRemoveFocus(this);
+  });
 
 })(window);

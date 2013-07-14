@@ -25,6 +25,17 @@
     e.preventDefault();
   }
 
+  // Adds focus class to .goalContent parent when focused
+  View.prototype.existingGoalAddFocus = function(obj){
+    $(obj).parent(".goal").addClass("focus");
+  }
+
+  // Removes focus class to .goalContent parent when focused
+  View.prototype.existingGoalRemoveFocus = function(obj){
+    $(obj).parent(".goal").removeClass("focus");
+  }
+
+
 
   // Pass the view to the window
   window.app.View = View;
