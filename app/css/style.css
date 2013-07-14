@@ -352,31 +352,34 @@ a {
   background: rgba(0, 0, 0, 0.7);
   height: 100%;
   left: 0;
+  opacity: 1;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 999; }
-  /* line 288, ../../sass/_base.scss */
+  z-index: 999;
+  transition: opacity 1.0s ease-in-out; }
+  /* line 290, ../../sass/_base.scss */
   .modalWrap.hidden {
-    display: none; }
+    display: none;
+    opacity: 0; }
 
-/* line 292, ../../sass/_base.scss */
+/* line 295, ../../sass/_base.scss */
 .goalFormWrapper {
   margin: 0 auto;
   max-width: 780px;
   width: 100%; }
 
-/* line 297, ../../sass/_base.scss */
+/* line 300, ../../sass/_base.scss */
 .goal.form {
   box-shadow: none;
   margin-top: 0;
   padding: 40px 60px 20px 60px; }
-  /* line 302, ../../sass/_base.scss */
+  /* line 305, ../../sass/_base.scss */
   .goal.form .goalContent {
     border-color: #4d4d4d; }
-    /* line 305, ../../sass/_base.scss */
+    /* line 308, ../../sass/_base.scss */
     .goal.form .goalContent:hover {
       border-color: #616161; }
-    /* line 309, ../../sass/_base.scss */
+    /* line 312, ../../sass/_base.scss */
     .goal.form .goalContent:focus, .goal.form .goalContent:hover:focus {
       border-color: gray; }
