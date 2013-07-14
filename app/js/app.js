@@ -1,5 +1,6 @@
 // This file is primarily for listener style code (e.g. $obj.bind ...)
-(function(window){
+(function (window) {
+  'use strict';
 
   function Goal() {
     this.model = new window.app.Model();
@@ -10,22 +11,22 @@
   var goal = new Goal();
 
   // Clicking New Goal triggers the modal
-  $("#newGoalButton").click(function(e){
+  $("#newGoalButton").click(function (e) {
     goal.view.openModal(e);
   });
 
   // Clicking cancel closes the modal
-  $("#modalCancel").bind('click', function(e){
+  $("#modalCancel, #newGoalModal").bind('click', function (e) {
     goal.view.closeModal(e);
   });
 
   // Focus on .goalContent (except the one in the modal) adds focus class
-  $(".goalContent").not("#newGoalContent").bind('focus', function(e){
+  $(".goalContent").not("#newGoalContent").bind('focus', function () {
     goal.view.existingGoalAddFocus(this);
   });
 
   // Blur out of .goalContent (except the one in the modal) removes focus class
-  $(".goalContent").not("#newGoalContent").bind('blur', function(e){
+  $(".goalContent").not("#newGoalContent").bind('blur', function () {
     goal.view.existingGoalRemoveFocus(this);
   });
 
