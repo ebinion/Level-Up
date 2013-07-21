@@ -11,13 +11,20 @@
   var goal = new Goal();
 
   // Clicking New Goal opens the modal
-  $("#newGoalButton").click(function (e) {
-    goal.view.openModal(e);
-  });
+  // $("#newGoalButton").click(function (e) {
+  //   goal.view.openModal(e);
+  // });
+  document.querySelector("#newGoalButton").addEventListener("click", function (e) {
+      goal.view.openModal.apply(goal.view, null);
+      e.preventDefault();
+    });
+  
+
 
   // Clicking cancel closes the modal
-  $("#modalCancel").bind('click', function (e) {
-    goal.view.closeModal(e);
+  document.querySelector("#modalCancel").addEventListener('click', function (e) {
+    goal.view.closeModal.apply(goal.view, null);
+    e.preventDefault();
   });
 
   // Focus on .goalContent (except the one in the modal) adds focus class

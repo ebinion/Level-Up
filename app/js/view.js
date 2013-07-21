@@ -12,17 +12,18 @@
   }
 
   // Opens the modal & brings the editor into focus
-  View.prototype.openModal = function (e) {
+  View.prototype.openModal = function () {
     this.newGoalModal.removeClass("hidden");
     this.newGoalContent.focus();
-    e.preventDefault();
+
+    window.console.log(this);
+    return false;
   };
 
   // Closes the modal, blurs the input field & resets the text
-  View.prototype.closeModal = function (e) {
+  View.prototype.closeModal = function () {
     this.newGoalModal.addClass("hidden");
     this.newGoalContent.html(this.modalPlaceholderText).blur();
-    e.preventDefault();
   };
 
   // Adds focus class to .goalContent parent when focused

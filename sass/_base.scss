@@ -191,6 +191,9 @@ a{
     margin: 0;
   }
 }
+[draggable]{
+  cursor: move;
+}
 .goalContent{
   border: 1px solid transparent;
   color: inherit;
