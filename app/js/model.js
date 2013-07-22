@@ -31,7 +31,7 @@ var LevelUp = LevelUp || {};
    */
   APP.Model = {
     // Default Settings
-    storageObject: 'goals',
+    storageObject: 'LevelUp',
     storageSync: true,
 
     /**
@@ -47,14 +47,14 @@ var LevelUp = LevelUp || {};
         return goals;
     },
 
-    save: function(key, value, callback) {
+    save: function(key, value) {
         var goals = this.get();
         goals[key] = value;
 
         return localStorage.setObject(this.storageObject, goals);
     },
 
-    clear: function(callback) {
+    clear: function() {
         var cleared = {};
 
         return localStorage.setObject(this.storageObject, cleared);
