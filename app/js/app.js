@@ -7,7 +7,6 @@ var LevelUp = LevelUp || {};
   'use strict';
 
   function Goal() {
-    // this.model = new APP.Model();
     this.view = new APP.View();
     // this.controller = new APP.Controller();
   }
@@ -49,6 +48,7 @@ var LevelUp = LevelUp || {};
     var newGoal = $('#newGoalContent').text();
 
     APP.Model.save(nextKey, newGoal);
+    goal.view.closeModal();
   });
 
 
