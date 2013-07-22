@@ -1,11 +1,15 @@
-// This file is primarily for listener style code (e.g. $obj.bind ...)
-(function (window) {
+// Namespace Object
+var LevelUp = LevelUp || {};
+
+// Pass reference to jQuery and Namespace
+(function($, APP) {
+
   'use strict';
 
   function Goal() {
-    this.model = new window.app.Model();
-    this.view = new window.app.View();
-    this.controller = new window.app.Controller();
+    // this.model = new APP.Model();
+    this.view = new APP.View();
+    // this.controller = new APP.Controller();
   }
 
   var goal = new Goal();
@@ -34,6 +38,18 @@
   $("#newGoalContent").bind('keypress', function (e) {
     goal.view.clearPlaceholder(e);
   });
-  
 
-})(window);
+  $("#modalSave").click(function() {
+    /**
+      TODO:
+      - Move the setting of the key into the APP.Model.save() function.
+    **/
+    var allGoals = APP.Model.get();
+    var nextKey = Object.keys(allGoals).length + 1;
+    var newGoal = $('#newGoalContent').text();
+
+    APP.Model.save(nextKey, newGoal);
+  });
+
+
+})(jQuery, LevelUp);
