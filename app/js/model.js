@@ -1,153 +1,64 @@
-(function (window) {
+/**
+ * Extending the Local Storage Object to allow saving of objects.
+ *
+ * @param  int|string   key     object key
+ * @param  int|string   value   object value
+ * @return bool                 true|false
+ */
+Storage.prototype.setObject = function(key, value) {
+    this.setItem(key, JSON.stringify(value));
+};
+
+/**
+ * Extending the Local Storage Object to allow returning of saved objects.
+ *
+ * @param  int|string   key     object key
+ * @return int|string           value
+ */
+Storage.prototype.getObject = function(key) {
+    var value = this.getItem(key);
+    return value && JSON.parse(value);
+};
+
+
+// Namespace Object
+var LevelUp = LevelUp || {};
+
+(function($, APP) {
   /**
-   * Creates a new Model instance and a new collection object.
-   *
-   * @class Model
-   * @constructor
-   * @param {string} [dbName] The name of the model. Used to set and get items in the client-side DB 
-   * @param {object} [dbType] A reference to the client-side DB
-   * @param {method} [callback] A method to run after the class initializes
-   * @return {method} Calls the provided function
+   * Application Model
+   * @type {Object}
    */
-  function Model(dbName, dbType, callback){
-    // Settings
-    this.dbName = dbName || "goals";
-    this.dbType = dbType || window.localStorage;
+  APP.Model = {
+    // Default Settings
+    storageObject: 'LevelUp',
+    storageSync: true,
 
-    // Initialize collection
-    if( !this.dbType.getItem(this.dbName) ){
-      this.dbType.setItem(this.dbName, []);
+    /**
+      TODO:
+      - Add Chrome Storage Sync API
+    **/
+
+    get: function() {
+        var goals = localStorage.getObject(this.storageObject);
+        if (!goals) {
+            return {};
+        }
+        return goals;
+    },
+
+    save: function(key, value) {
+        var goals = this.get();
+        goals[key] = value;
+
+        return localStorage.setObject(this.storageObject, goals);
+    },
+
+    clear: function() {
+        var cleared = {};
+
+        return localStorage.setObject(this.storageObject, cleared);
     }
+};
 
-    // Callback
-    callback = callback || function(){};
-    return callback();
-  }
-
-  /**
-  * Returns all elements in the model, is used by several functions in the class
-  *
-  * @return {array} Array of all objects in the model 
-  */
-  Model.prototype.all = function(){
-    data = this.dbType.getItem(this.dbName);
-
-    if(!data){
-      return [];
-    }else{
-      return JSON.parse(data);
-    }
-  };
-
-  /**
-   * Overwrites the previous model data with new data
-   *
-   * @param {object} [currentModel] A Javascript object representing the desired model state to save 
-   * @param {method} [callback] A method to run after the class initializes
-   * @return {method} Calls the provided function and provides the current model state
-   */
-  Model.prototype.save = function(currentModel, callback){
-    if(!currentModel){
-      return false;
-    }
-    this.dbType.setItem(this.dbName, JSON.stringify(currentModel));
-
-    // Callback
-    callback = callback || function(){};
-    return callback(currentModel);
-  };
-
-
-  /**
-   * Creates new objects in the model
-   * 
-   * @param {function} [callback] The function to call after the object has been created
-   */
-  Model.prototype.create = function(object, callback){
-    currentModel = this.all();
-    currentModel.push(object);
-
-    this.save(currentModel);
-
-    callback = callback || function () {};
-
-    return callback(currentModel);
-  };
-
-
-  /**
-   * Finds specific objects in the model
-   *
-   * @param {integer} [id] The index of the object in the array
-   */
-  Model.prototype.find = function(id){
-    if(id === null || id === false){
-      return false;
-    }
-    currentModel = this.all();
-
-    if(id > currentModel.length - 1){
-      return false;
-    }else{
-      return currentModel[id];
-    }
-
-  };
-
-  /**
-  * Updates objects in the model
-  *
-  */
-  Model.prototype.update = function(id, object, callback){
-    if(id === null || id === false || !object){
-      return false;
-    }
-
-    currentModel = this.all();
-    if(!currentModel[id]){
-      return false;
-    }
-
-    currentModel[id] = object;
-    this.save(currentModel);
-
-    callback = callback || function(){};
-    return callback(currentModel);
-  };
-
-  /**
-  * Deletes objects in the model
-  *
-  */
-  Model.prototype.delete = function(id, callback){
-    if(id === null || id === false){
-      return false;
-    }
-
-    currentModel = this.all();
-    if(!currentModel[id]){
-      return false;
-    }
-
-    currentModel.splice(id, 1);
-    this.save(currentModel);
-
-    callback = callback || function(){};
-    return callback(currentModel);
-  };
-
-  /**
-  * Deletes all objects in the model
-  *
-  */
-  Model.prototype.deleteAll = function(callback){
-    this.dbType.setItem(this.dbName, []);
-
-    callback = callback || function(){};
-    return callback();
-  };
-
-  // Export to window
-  window.app.Model = Model;  
-
-})(window);
+})(jQuery, LevelUp);
