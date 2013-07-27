@@ -46,6 +46,34 @@ var LevelUp = LevelUp || {};
     }
   };
 
+  View.prototype.goalHTML = function (content, currentGoal) {
+    var currentGoalClass;
+
+    if (currentGoal) {
+      currentGoalClass = 'current';
+    }
+
+    var html = '<li class="goalWrapper">' +
+          '<article class="goal' + currentGoalClass + '">' +
+            '<div class="goalContent" contenteditable>' +
+              content +
+            '</div>' +
+            '<menu class="goalActions">' +
+              '<ul class="goalActionsList goalMenu">' +
+                '<li class="goalAction"><a href="#deleteGoal" class="icon-Trash" title="Remove goal">Delete Goal</a></li>' +
+                '<li class="goalAction"><a href="#editGoal" class="icon-Edit" title="Edit goal">Edit Goal</a></li>' +
+                '<li class="goalAction"><a href="#accomplishGoal" class="icon-Award" title="Mark goal accomplished">Mark goal accomplished</a></li>' +
+              '</ul>' +
+              '<ul class="goalActionsList editMenu">' +
+                '<li class="goalAction"><a href="#cancel" class="icon-Cancel" title="Cancel">Cancel</a></li>' +
+                '<li class="goalAction"><a href="#save" class="icon-Accept" title="Save changes">Save Changes</a></li>' +
+              '</ul>' +
+            '</menu>' +
+          '</article>' +
+        '</li>';
+    return html;
+  };
+
 
   // // Pass the view to the window
   // window.app.View = View;
