@@ -158,7 +158,8 @@ a{
   width: 100%;
 }
 .goal{ 
-  background: $colorBackground none no-repeat -8px 20px;
+  background: $colorBackground url("../img/drag-indicators.svg") no-repeat -8px 200%;
+  background-size: 4px 80px;
   box-shadow: 2px 2px 0 $colorBackground;
   line-height: 24px;
   font-size: 16px;
@@ -192,10 +193,9 @@ a{
   }
 
   &[draggable]:hover{
-    background-image: url("../img/drag-indicators.svg");
+    
     background-position: 18px bottom;
     background-repeat: no-repeat; 
-    background-size: 4px 80px;
     cursor: move;
   }
 }
