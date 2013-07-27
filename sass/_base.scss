@@ -193,8 +193,9 @@ a{
 
   &[draggable]:hover{
     background-image: url("../img/drag-indicators.svg");
+    background-position: 18px bottom;
     background-repeat: no-repeat; 
-    background-position: 8px 20px;
+    background-size: 4px 80px;
     cursor: move;
   }
 }
