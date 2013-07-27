@@ -158,7 +158,7 @@ a{
   width: 100%;
 }
 .goal{ 
-  background: $colorBackground;
+  background: $colorBackground none no-repeat -8px 20px;
   box-shadow: 2px 2px 0 $colorBackground;
   line-height: 24px;
   font-size: 16px;
@@ -182,7 +182,7 @@ a{
   }
 
   &:hover, &.focus{
-    background: lighten($colorBackground, 4%);
+    background-color: lighten($colorBackground, 4%);
     box-shadow: 2px 2px 0 darken($colorBackground, 2%);
     color: $colorTextHighlight;
   }
@@ -190,10 +190,15 @@ a{
   p{
     margin: 0;
   }
+
+  &[draggable]:hover{
+    background-image: url("../img/drag-indicators.svg");
+    background-repeat: no-repeat; 
+    background-position: 8px 20px;
+    cursor: move;
+  }
 }
-[draggable]{
-  cursor: move;
-}
+
 .goalContent{
   border: 1px solid transparent;
   color: inherit;
