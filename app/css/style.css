@@ -226,41 +226,41 @@ a {
 
 /* line 160, ../../sass/_base.scss */
 .goal {
-  background: #333333 url("../img/drag-indicators.svg") no-repeat -8px 200%;
-  background-size: 4px 80px;
   box-shadow: 2px 2px 0 #333333;
   line-height: 24px;
   font-size: 16px;
   margin: 5px 0;
   padding: 20px 30px 0;
   transition: all .2s ease-in-out; }
-  /* line 170, ../../sass/_base.scss */
+  /* line 171, ../../sass/_base.scss */
   .goal.current {
     color: #d4d4d4;
     font-size: 36px;
     line-height: 42px; }
-    /* line 175, ../../sass/_base.scss */
+    /* line 176, ../../sass/_base.scss */
     .goal.current:hover, .goal.current.focus {
       color: #eeeeee; }
-  /* line 180, ../../sass/_base.scss */
+  /* line 181, ../../sass/_base.scss */
   .goal.form {
     background: #3d3d3d;
     color: #eeeeee; }
-  /* line 185, ../../sass/_base.scss */
+  /* line 186, ../../sass/_base.scss */
   .goal:hover, .goal.focus {
     background-color: #3d3d3d;
     box-shadow: 2px 2px 0 #2e2e2e;
     color: #eeeeee; }
-  /* line 191, ../../sass/_base.scss */
+  /* line 192, ../../sass/_base.scss */
   .goal p {
     margin: 0; }
-  /* line 195, ../../sass/_base.scss */
-  .goal[draggable]:hover {
-    background-position: 18px bottom;
-    background-repeat: no-repeat;
-    cursor: move; }
+  /* line 196, ../../sass/_base.scss */
+  .goal[draggable] {
+    cursor: move;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-drag: element;
+    user-drag: element; }
 
-/* line 203, ../../sass/_base.scss */
+/* line 211, ../../sass/_base.scss */
 .goalContent {
   border: 1px solid transparent;
   color: inherit;
@@ -274,19 +274,19 @@ a {
   transition: border-color .2s ease-in-out;
   -webkit-appearance: none;
   width: 100%; }
-  /* line 217, ../../sass/_base.scss */
+  /* line 225, ../../sass/_base.scss */
   .goalContent:hover {
     border-color: #4d4d4d; }
-  /* line 221, ../../sass/_base.scss */
+  /* line 229, ../../sass/_base.scss */
   .focus .goalContent, .goalContent:focus, .goalContent:hover:focus {
     border-color: gray;
     color: #eeeeee; }
-  /* line 226, ../../sass/_base.scss */
+  /* line 234, ../../sass/_base.scss */
   .goalContent.large {
     font-size: 24px;
     line-height: 32px; }
 
-/* line 233, ../../sass/_base.scss */
+/* line 241, ../../sass/_base.scss */
 .goalActions {
   font-size: 24px;
   line-height: 1;
@@ -299,23 +299,23 @@ a {
   .goalActions:after {
     clear: both; }
 
-/* line 239, ../../sass/_base.scss */
+/* line 247, ../../sass/_base.scss */
 .goalActionsList {
   clear: both;
   float: right; }
 
-/* line 243, ../../sass/_base.scss */
+/* line 251, ../../sass/_base.scss */
 .goalAction {
   float: left; }
-  /* line 246, ../../sass/_base.scss */
+  /* line 254, ../../sass/_base.scss */
   .goalAction > a {
     color: #666666;
     transition: color .2s ease-in-out; }
-    /* line 250, ../../sass/_base.scss */
+    /* line 258, ../../sass/_base.scss */
     .goalAction > a:hover, .goalAction > a:focus {
       color: #eeeeee; }
 
-/* line 257, ../../sass/_base.scss */
+/* line 265, ../../sass/_base.scss */
 .editMenu, .goalMenu {
   height: 0;
   opacity: 0;
@@ -324,13 +324,13 @@ a {
   transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out;
   overflow: hidden; }
 
-/* line 266, ../../sass/_base.scss */
+/* line 274, ../../sass/_base.scss */
 .focus .editMenu {
   height: 60px;
   opacity: 1;
   top: 0;
   transform: all .2s ease-in-out; }
-/* line 271, ../../sass/_base.scss */
+/* line 279, ../../sass/_base.scss */
 .focus .goalMenu {
   height: 0;
   opacity: 0;
@@ -338,14 +338,14 @@ a {
   top: -20px;
   transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out; }
 
-/* line 277, ../../sass/_base.scss */
+/* line 285, ../../sass/_base.scss */
 .current.goal .goalMenu, .goal:hover .goalMenu {
   height: 60px;
   opacity: 1;
   top: 0;
   transform: all .2s ease-in-out; }
 
-/* line 282, ../../sass/_base.scss */
+/* line 290, ../../sass/_base.scss */
 .goal.focus:hover .goalMenu, .current.goal.focus .goalMenu {
   height: 0;
   opacity: 0;
@@ -353,7 +353,7 @@ a {
   top: -20px;
   transition: height 0.2s ease-in-out, opacity 0.3s ease-in-out, top 0.4s ease-in-out; }
 
-/* line 288, ../../sass/_base.scss */
+/* line 296, ../../sass/_base.scss */
 .modalWrap {
   background: rgba(0, 0, 0, 0.7);
   height: 100%;
@@ -366,15 +366,15 @@ a {
   transition-delay: .1s;
   transition: opacity .3s ease-in-out;
   visibility: visible; }
-  /* line 301, ../../sass/_base.scss */
+  /* line 309, ../../sass/_base.scss */
   .modalWrap.hidden {
     opacity: 0;
     visibility: hidden; }
-    /* line 305, ../../sass/_base.scss */
+    /* line 313, ../../sass/_base.scss */
     .modalWrap.hidden .goalFormWrapper {
       top: -200px; }
 
-/* line 310, ../../sass/_base.scss */
+/* line 318, ../../sass/_base.scss */
 .goalFormWrapper {
   margin: 0 auto;
   position: relative;
@@ -384,17 +384,17 @@ a {
   visibility: visible;
   width: 100%; }
 
-/* line 319, ../../sass/_base.scss */
+/* line 327, ../../sass/_base.scss */
 .goal.form {
   box-shadow: none;
   margin-top: 0;
   padding: 40px 60px 20px 60px; }
-  /* line 324, ../../sass/_base.scss */
+  /* line 332, ../../sass/_base.scss */
   .goal.form .goalContent {
     border-color: #4d4d4d; }
-    /* line 327, ../../sass/_base.scss */
+    /* line 335, ../../sass/_base.scss */
     .goal.form .goalContent:hover {
       border-color: #616161; }
-    /* line 331, ../../sass/_base.scss */
+    /* line 339, ../../sass/_base.scss */
     .goal.form .goalContent:focus, .goal.form .goalContent:hover:focus {
       border-color: gray; }

@@ -158,8 +158,9 @@ a{
   width: 100%;
 }
 .goal{ 
-  background: $colorBackground url("../img/drag-indicators.svg") no-repeat -8px 200%;
-  background-size: 4px 80px;
+  // I don't like the drag indictators, I'll fix them later.
+  // background: $colorBackground url("../img/drag-indicators.svg") no-repeat -8px 200%;
+  // background-size: 4px 80px;
   box-shadow: 2px 2px 0 $colorBackground;
   line-height: 24px;
   font-size: 16px;
@@ -192,11 +193,18 @@ a{
     margin: 0;
   }
 
-  &[draggable]:hover{
-    
-    background-position: 18px bottom;
-    background-repeat: no-repeat; 
+  &[draggable]{
     cursor: move;
+    -moz-user-select: none;
+    user-select: none;
+    -webkit-user-drag: element;
+    user-drag: element;
+
+    // &:hover{
+      // I don't like the drag indictators, I'll fix them later.
+      // background-position: 18px bottom;
+      // background-repeat: no-repeat;
+    // }
   }
 }
 
