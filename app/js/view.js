@@ -2,10 +2,10 @@
 var LevelUp = LevelUp || {};
 
 // This file is primarily for listener style code (e.g. open a modal)
-(function($, APP) {
+(function ($, APP) {
   'use strict';
 
-  APP.View = function() {
+  APP.View = function () {
     // Common view objects
     this.newGoalModal = $("#newGoalModal");
     this.newGoalContent = $("#newGoalContent");
@@ -14,8 +14,14 @@ var LevelUp = LevelUp || {};
     this.modalPlaceholderText = "What would you like to accomplish?";
   };
 
-  // Opens the modal & brings the editor into focus
-  APP.View.prototype.openModal = function (e) {
+  /**
+   * Opens the modal & textfield into focus 
+   * @return {false}
+   */
+  APP.View.prototype.openModal = function () {
+    /**
+     * @todo Refactor code so that event propagation isn't completely blocked. Only the url event should be blocked.
+     */
     this.newGoalModal.removeClass("hidden");
     this.newGoalContent.focus();
 
@@ -23,33 +29,58 @@ var LevelUp = LevelUp || {};
     return false;
   };
 
-  // Closes the modal, blurs the input field & resets the text
-  APP.View.prototype.closeModal = function (e) {
+  /**
+  * Closes the modal, blurs the input field & resets the text
+  */
+  APP.View.prototype.closeModal = function () {
     this.newGoalModal.addClass("hidden");
     this.newGoalContent.html(this.modalPlaceholderText).blur();
   };
 
-  // Adds focus class to .goalContent parent when focused
-  APP.View.prototype.existingGoalAddFocus = function (obj) {
-    $(obj).parent(".goal").addClass("focus");
+  /**
+  * Adds focus class to .goalContent parent when focused
+  *
+  * @param {object} $obj jQuery DOM object
+  */
+  APP.View.prototype.existingGoalAddFocus = function ($obj) {
+    $($obj).parent(".goal").addClass("focus");
   };
 
-  // Removes focus class to .goalContent parent when focused
-  APP.View.prototype.existingGoalRemoveFocus = function (obj) {
-    $(obj).parent(".goal").removeClass("focus");
+  /**
+  * Removes focus class from .goalContent parent when focused
+  *
+  * @param {object} $obj jQuery DOM object
+  */
+  APP.View.prototype.existingGoalRemoveFocus = function ($obj) {
+    $($obj).parent(".goal").removeClass("focus");
   };
 
-  // Clear placeholder content
+  /**
+  * Clear placeholder content
+  *
+  * @param {object} e DOM Event object
+  */
   APP.View.prototype.clearPlaceholder = function (e) {
-    if (e.keyCode != 13 && $(e.target).html() == this.modalPlaceholderText) {
+    var returnKey = 13;
+    if (e.keyCode != returnKey && $(e.target).html() == this.modalPlaceholderText) {
       $(e.target).html("");
     }
   };
 
-  View.prototype.goalHTML = function (content, currentGoal) {
+  /**
+  * Clear placeholder content
+  *
+  * @param {string}  content        Text content for new goals
+  * @param {boolean} isCurrentGoal  Will the generated HTML be placed in current goal block?
+  * @return {string} HTML string to be inserted into the DOM
+  */
+  APP.View.prototype.goalHTML = function (content, isCurrentGoal) {
+    /**
+     * @todo Create & return DOM objects instead of a string
+     */
     var currentGoalClass;
 
-    if (currentGoal) {
+    if (isCurrentGoal) {
       currentGoalClass = 'current';
     }
 
@@ -73,9 +104,5 @@ var LevelUp = LevelUp || {};
         '</li>';
     return html;
   };
-
-
-  // // Pass the view to the window
-  // window.app.View = View;
 
 })($, LevelUp);
